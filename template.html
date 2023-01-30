@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>Playwright Test</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      * {
+        font-family: "NanumSquare Neo OTF Regular" !important;
+        /* white-space: revert !important; */
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        line-height: 1.5 !important;
+      }
+
+      .qubox {
+        margin: 0 !important;
+      }
+
+      .qubox > dd {
+        margin-left: 0 !important;
+      }
+
+      ul {
+        padding: 0 !important;
+      }
+
+      ul>li>div:nth-child(2) {
+        padding-left: 0 !important
+      }
+
+      #sheetName {
+        background: #efefef;
+        padding: 12px;
+        border-radius: 12px;
+      }
+
+      #sheetName td:nth-child(1) {
+        font-weight: 700;
+      }
+
+      #pid {
+        font-size: 14px;
+        opacity: 0.5;
+      }
+
+      td {
+        display: table-cell !important;
+      }
+
+      #capture {
+        padding: 12px;
+      }
+
+      ul {
+        list-style: none;
+      }
+      
+      /* 문항 해설을 보여주고 싶다면 아래 스타일을 적용하세요
+     
+      #Explanation {
+        display: block !important;
+        border: none;
+      }
+
+      [name=divParagraph] {
+        margin-top: 5px;
+      }
+      
+      */
+    </style>
+  </head>
+
+  <body>
+    <div id="capture">
+      <span id="pid">#${item.id}-${i}</span>
+      ${item.question
+          .trim()
+          .replace('{출제 의도}', '출제 의도')
+          .replace('{출제의도}', '출제의도')
+          .replace('{해설}', '해설')
+          .replace('{오답 피하기}', '오답 피하기')
+          .replace('{오답풀이}', '오답풀이')
+          .replace(
+              '<fieldset name="divExplanation" class="explain" id="Explanation" style="display:none;"></fieldset>',
+              ''
+          )}
+    </div>
+  </body>
+</html>
